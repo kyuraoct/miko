@@ -34,13 +34,11 @@ let tags = {
   'maker': 'Maker',
 }
 const defaultMenu = {
-  before: `*-- Miko --*
-
-Your Stats 📊
+  before: `Status Pengguna 📊
 *Limit:* %limit 🎫
 *Level:* %level 🧬
 *XP:* %exp 🪄
-for more check at */inv*
+lebih lengkapnya cek di */inv*
 
 here for the features:
 %readmore`.trimStart(),
@@ -160,6 +158,14 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     let url = `https://telegra.ph/file/2ebe351a63861053f58df.jpg`.trim()
     let res = await fetch(url)
     let buffer = await res.buffer()
+    await m.reply(`dear pengguna bot yang terhormat
+mohon menjaga moral & aturan jika ingin melakukan hal hal, kalo tidak percuma kamu beragama.
+
+CMD Bot : !menu .help /menu
+ga ngerti apa"? tanya tanya aja gpp
+bot khusus warga negara indonesia
+
+- dari hati yang terdalam seorang owner.`)
     let message = await prepareWAMessageMedia({ image: buffer }, { upload: conn.waUploadToServer })
                 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
