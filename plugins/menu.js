@@ -34,7 +34,7 @@ let tags = {
   'maker': 'Maker',
 }
 const defaultMenu = {
-  before: `Status Pengguna 📊
+  before: `*Status Mu* 📊
 *Limit:* %limit 🎫
 *Level:* %level 🧬
 *XP:* %exp 🪄
@@ -42,7 +42,7 @@ lebih lengkapnya cek di */inv*
 
 here for the features:
 %readmore`.trimStart(),
-  header: ' • *%category*',
+  header: ' • *%category* • ',
   body: ' - %cmd %islimit %isPremium',
   footer: '\n',
   after: `*Made ♡ by*
