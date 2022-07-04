@@ -1,10 +1,11 @@
-let handler = async m => m.reply(`- Bang Ridwan - Pulsa
-•  [0895-3303-79186]
-•  [0896-5436-0447]
+let handler = async m => m.reply(`Monggo seikhlasnya ya... <33
 
-- Bang Kyura - Non Pulsa
-•  Dana [0819-9890-3280]
-`.trim()) // Tambah sendiri kalo mau
+All Payment : https://saweria.co/ArdhiRahma 
+Opsional : 
+Dana/Gopay/Ovo/Shopeepay : [081998903280]
+
+Saya atas nama Ardhi berterima kasih yang sudah berdonasi.
+`.trim()) // Tambah sendiri kalo
 handler.help = ['donasi']
 handler.tags = ['info']
 handler.command = /^dona(te|si)$/i

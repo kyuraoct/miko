@@ -34,23 +34,27 @@ let tags = {
   'maker': 'Maker',
 }
 const defaultMenu = {
-  before: `*-- Miko --*
+  before: `Hi Cutie, %ucapan
 
 Your Stats 📊
 *Limit:* %limit 🎫
 *Level:* %level 🧬
 *XP:* %exp 🪄
 for more check at */inv*
+if u don't understand, u can ask ur friend who knows.
 
-here for the features:
+my gh: github.com/kyuraoct
+my wa: wa.me/37122202267 
+my yt: youtube.com/c/KYURA
+for donations click button "donasi🧾"
+
+click here for features :
 %readmore`.trimStart(),
-  header: ' • *%category*',
-  body: ' - %cmd %islimit %isPremium',
+  header: ' -- *%category* --\n',
+  body: '  • %cmd %islimit %isPremium',
   footer: '\n',
-  after: `*Made ♡ by*
-*Aine* | %version
-_Powered By Kyura_
-`,
+  after: '```' + `Miko Powered By Ardhi.
+_@14.10.05_` + '```',
 }
 let handler = async (m, { conn, usedPrefix: _p }) => {
   try {
@@ -116,7 +120,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     let header = conn.menu.header || defaultMenu.header
     let body = conn.menu.body || defaultMenu.body
     let footer = conn.menu.footer || defaultMenu.footer
-    let after = conn.menu.after || (conn.user.jid == global.conn.user.jid ? '' : `Powered by https://wa.me/${global.conn.user.jid.split`@`[0]}`) + defaultMenu.after
+    let after = conn.menu.after || (conn.user.jid == global.conn.user.jid ? '' : `Powered by https://wa.me/${global.conn.user.jid.split`@`[2]}`) + defaultMenu.after
     let _text = [
       before,
       ...Object.keys(tags).map(tag => {
@@ -164,12 +168,13 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
                 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
                         hydratedTemplate: {
-                            imageMessage: message.imageMessage,
+                            locationMessage: {
+                            jpegThumbnail: fs.readFileSync('./src/miko.jpg') },
                             hydratedContentText: text.trim(),
-                            hydratedFooterText:'Ⓟ = premium | Ⓛ = limit',
+                            hydratedFooterText:'Ⓟ = for premium users.\nⓁ = fitur berlimit.',
                             hydratedButtons: [{
                                 quickReplyButton: {
-                                    displayText: 'Donasi',
+                                    displayText: 'Donasi🧾',
                                     id: '/donasi'
                                 }
                             }, {
@@ -177,11 +182,6 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
                                     displayText: 'Sewa Bot',
                                     id: '/sewa'
                                 }  
-                            }, {
-                                quickReplyButton: {
-                                    displayText: 'Owner',
-                                    id: '/owner'
-                                }
                             }]
                         }
                     }
@@ -194,7 +194,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
 }
 handler.help = ['menu']
 handler.tags = ['main']
-handler.command = /^(menu|help|\?)$/i
+handler.command = /^(menu|miko|kyura|help|\?)$/i
 
 handler.exp = 3
 
@@ -212,19 +212,19 @@ function clockString(ms) {
 
 function ucapan() {
         const hour_now = moment.tz('Asia/Jakarta').format('HH')
-        var ucapanWaktu = 'Pagi kak'
+        var ucapanWaktu = 'Good Morning 🌄'
         if (hour_now >= '03' && hour_now <= '10') {
-          ucapanWaktu = 'Pagi kak'
+          ucapanWaktu = 'Good Morning 🌄'
         } else if (hour_now >= '10' && hour_now <= '15') {
-          ucapanWaktu = 'Siang kak'
+          ucapanWaktu = 'Good Afternoon 🌇'
         } else if (hour_now >= '15' && hour_now <= '17') {
-          ucapanWaktu = 'Sore kak'
+          ucapanWaktu = 'Good Afternoon 🌇'
         } else if (hour_now >= '17' && hour_now <= '18') {
-          ucapanWaktu = 'Selamat Petang kak'
+          ucapanWaktu = 'Good Evening 🌆'
         } else if (hour_now >= '18' && hour_now <= '23') {
-          ucapanWaktu = 'Malam kak'
+          ucapanWaktu = 'Good Night 🏙️'
         } else {
-          ucapanWaktu = 'Selamat Malam!'
+          ucapanWaktu = 'Good Night! 🏙️'
         }	
         return ucapanWaktu
 }
