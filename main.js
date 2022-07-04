@@ -42,7 +42,7 @@ global.opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse()
 global.prefix = new RegExp('^[' + (opts['prefix'] || 'â€ŽxzXZ/i!#$%+Â£Â¢â‚¬Â¥^Â°=Â¶âˆ†Ã—Ã·Ï€âˆšâœ“Â©Â®:;?&.\\-').replace(/[|\\{}()[\]^$+*?.\-\^]/g, '\\$&') + ']')
 
 
-global.db = new Low(new mongoDB('mongodb+srv://Kyura1000:kyura1000@cluster0.35vpp.mongodb.net/?retryWrites=true&w=majority'))
+global.db = new Low(new mongoDB('mongodb+srv://miko:miko@cluster0.ctslt.mongodb.net/?retryWrites=true&w=majority'))
 
 global.DATABASE = global.db // Backwards Compatibility
 global.loadDatabase = async function loadDatabase() {
