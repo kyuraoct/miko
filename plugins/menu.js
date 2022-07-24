@@ -18,6 +18,7 @@ let tags = {
   'quotes': 'Quotes',
   'admin': 'Admin',
   'group': 'Group',
+  'nsfw': 'NSFW Anime (Update Besok)',
   'internet': 'Internet',
   'anonymous': 'Anonymous Chat',
   'berita': 'Berita',

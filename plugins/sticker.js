@@ -5,6 +5,7 @@ let { webp2png } = require('../lib/webp2mp4')
 let handler = async (m, { conn, args, usedPrefix, command }) => {
   let stiker = false
   try {
+    let pushname = conn.getName(m.sender)
     let q = m.quoted ? m.quoted : m
     let mime = (q.msg || q).mimetype || ''
     if (/webp|image|video/g.test(mime)) {
@@ -17,13 +18,13 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         else if (/image/g.test(mime)) out = await uploadImage(img)
         else if (/video/g.test(mime)) out = await uploadFile(img)
         if (!isUrl(out)) out = await uploadImage(img)
-        stiker = await sticker(false, out, `Miko`, `Bot`)
+        stiker = await sticker(false, out, `${pushname}`, `Sticker by Miko\nBot WhatsApp`)
       } catch (e) {
         console.error(e)
-        if (!stiker) stiker = await sticker(img, false, `Miko`, `Bot`)
+        if (!stiker) stiker = await sticker(img, false, `${pushname}`, `Sticker by Miko\nBot WhatsApp`)
       }
     } else if (args[0]) {
-      if (isUrl(args[0])) stiker = await sticker(false, args[0], `Miko`, `Bot`)
+      if (isUrl(args[0])) stiker = await sticker(false, args[0], `${pushname}`, `Sticker By Miko\nBot WhatsApp`)
       else return m.reply('URL tidak valid!')
     }
   } catch (e) {

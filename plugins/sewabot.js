@@ -17,9 +17,7 @@ Pembayaran Boleh Menggunakan :
 4. PULSA XL
 5. GoPay
 
-kalo minat segera chat yaa..
-wa.me/${owner[2]}
-*Owner ${conn.user.name}*
+kalo minat segera hubungi owner
 
 makasih.
 `.trim()) // Tambah sendiri kalo
